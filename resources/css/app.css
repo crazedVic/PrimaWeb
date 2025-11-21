@@ -1,0 +1,220 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Festschrift page - only mobile responsive styles, no forced centering */
+#ulcontent table {
+    border-collapse: separate;
+    border-spacing: 1em;
+}
+
+#ulcontent th.anmeldung,
+#ulcontent th.adobe {
+    padding: 0.5em;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#ulcontent td {
+    vertical-align: middle;
+    padding: 0.5em;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    #ulcontent {
+        padding: 0.5em;
+        margin: 0;
+    }
+    
+    #ulcontent > div:first-child {
+        margin-bottom: 1.5em;
+    }
+    
+    #ulcontent > div:first-child img {
+        max-width: 90%;
+    }
+    
+    #ulcontent table {
+        width: 100% ;
+        font-size: 0.9em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    
+    #ulcontent thead {
+        display: none; /* Hide header row on mobile */
+    }
+    
+    #ulcontent tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    
+    /* Break out of table structure - rows become invisible containers */
+    #ulcontent tbody tr {
+        display: contents;
+    }
+    
+    /* Column 1: Festschrift - combine image and text into one tile */
+    #ulcontent tbody tr:first-child td:first-child {
+        display: block;
+        width: 100% ;
+        padding: 1em;
+        text-align: center ;
+        font-size: 0.9em ;
+        border: 1px solid #ddd;
+        border-radius: 8px 8px 0 0;
+        background: #f9f9f9;
+    }
+    
+    #ulcontent tbody tr:first-child td:first-child::before {
+        content: "Festschrift zum Ansehen und Drucken";
+        display: block;
+        font-weight: bold;
+        font-size: 1em;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    /* Append the text from the second row to the first row's cell */
+    #ulcontent tbody tr:first-child td:first-child::after {
+        content: "Festschrift";
+        display: block;
+        font-size: 1em;
+        margin-top: 0.5em;
+        padding-top: 0.5em;
+    }
+    
+    /* Hide the second row's first cell - content moved to first cell */
+    #ulcontent tbody tr:last-child td:first-child {
+        display: none;
+    }
+    
+    /* Column 2: Adobe - combine image and text into one tile */
+    #ulcontent tbody tr:first-child td:last-child {
+        display: block;
+        width: 100% ;
+        padding: 1em;
+        text-align: center ;
+        font-size: 0.9em ;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: #f9f9f9;
+        margin-bottom: 1.5em;
+    }
+    
+    #ulcontent tbody tr:first-child td:last-child::before {
+        content: "Adobe Acrobat";
+        display: block;
+        font-weight: bold;
+        font-size: 1em;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    /* Append the text from the second row to the first row's cell */
+    #ulcontent tbody tr:first-child td:last-child::after {
+        content: "Reader";
+        display: block;
+        font-size: 1em;
+        margin-top: 0.5em;
+        padding-top: 0.5em;
+    }
+    
+    /* Hide the second row's second cell - content moved to first cell */
+    #ulcontent tbody tr:last-child td:last-child {
+        display: none;
+    }
+    
+    #ulcontent td.wahl {
+        font-size: 1em ;
+    }
+    
+    #ulcontent td a img {
+        max-width: 60px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #ulcontent {
+        padding: 0.25em;
+    }
+    
+    #ulcontent > div:first-child img {
+        max-width: 85%;
+    }
+    
+    #ulcontent table {
+        font-size: 0.85em;
+        gap: 1em;
+    }
+    
+    #ulcontent tbody {
+        gap: 1em;
+    }
+    
+    #ulcontent tbody tr:first-child td:first-child,
+    #ulcontent tbody tr:last-child td:first-child,
+    #ulcontent tbody tr:first-child td:last-child,
+    #ulcontent tbody tr:last-child td:last-child {
+        font-size: 0.85em ;
+        padding: 0.8em;
+    }
+    
+    #ulcontent tbody tr:last-child td:first-child {
+        margin-bottom: 1em;
+    }
+    
+    #ulcontent tbody tr:first-child td:first-child::before,
+    #ulcontent tbody tr:first-child td:last-child::before {
+        font-size: 0.9em;
+    }
+    
+    #ulcontent td a img {
+        max-width: 50px;
+    }
+}
+
+/* Stammbaum page hover effects for linked image map areas */
+#stcontent img[usemap],
+.stcontent img[usemap] {
+    transition: transform 0.3s ease, box-shadow 0.3s ease ;
+    cursor: default ;
+}
+
+#stcontent img[usemap].hover-effect,
+.stcontent img[usemap].hover-effect {
+    transform: scale(1.02) ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
+    cursor: pointer ;
+}
+
+/* Ensure areas without valid links don't show pointer cursor */
+#stcontent map area[href="#"],
+.stcontent map area[href="#"] {
+    cursor: default ;
+}
+
+/* Areas with valid links should show pointer cursor */
+#stcontent map area[href^="http"],
+.stcontent map area[href^="http"] {
+    cursor: pointer ;
+}
