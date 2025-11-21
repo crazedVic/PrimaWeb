@@ -38,6 +38,19 @@ p {
   margin: 0.75em 0;
 }
 
+/* Override Tailwind preflight for images inside paragraphs to allow text-align centering */
+p img,
+p svg,
+p video,
+p canvas,
+p audio,
+p iframe,
+p embed,
+p object {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Standardized Links */
 a:link {
   color: #000000;
@@ -670,7 +683,7 @@ a, button, .nav-link, .dropdown-item a {
 
 /* Center specific homepage content areas - override old styles */
 #htxt {
-  text-align: center !important;
+  
   margin: 1em auto !important;
   width: 100% !important;
   max-width: 800px !important;
@@ -687,7 +700,7 @@ a, button, .nav-link, .dropdown-item a {
   width: 100% !important;
   max-width: 100% !important;
   float: none !important;
-  text-align: center !important;
+  
 }
 
 #himg1 img, #himg2 img {
@@ -710,7 +723,7 @@ a, button, .nav-link, .dropdown-item a {
 
 /* Center content divs without specific IDs - override existing styles */
 #upd1 {
-  text-align: center !important;
+  
   margin: 1em auto !important;
   float: none !important;
   width: 100% !important;
@@ -726,7 +739,7 @@ a, button, .nav-link, .dropdown-item a {
   flex-direction: column !important;
   align-items: center !important;
   width: 100% !important;
-  text-align: center !important;
+  
 }
 
 .yui-g > div {
@@ -734,20 +747,20 @@ a, button, .nav-link, .dropdown-item a {
   max-width: 1200px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  text-align: center !important;
+  
 }
 
 /* Override all old left-margin and float styles for content containers */
 #gcontent, #untercontent, #spfcontent, #sassencontent {
   margin-left: auto !important;
   margin-right: auto !important;
-  text-align: center !important;
+  
   float: none !important;
 }
 
 /* Override specific left-aligned content styles */
 #gcontent .gp1, #gcontent .gp2 {
-  text-align: center !important;
+  
   margin-left: auto !important;
   margin-right: auto !important;
 }
@@ -1302,13 +1315,13 @@ a, button, .nav-link, .dropdown-item a {
   margin-bottom: 3.5em !important;
   max-width: 1200px !important;
   width: 100% !important;
-  text-align: center !important;
+  
 }
 #spfcontent h1 {
   font-size: 1.5em;
   margin-left: auto !important;
   margin-right: auto !important;
-  text-align: center !important;
+  
 }
 #spfcontent h1.spf3 {
   margin-top: 1.5em;
@@ -1798,7 +1811,7 @@ a, button, .nav-link, .dropdown-item a {
   margin-right: auto !important;
   max-width: 1200px !important;
   width: 100% !important;
-  text-align: center !important;
+  
 }
 #sassencontent table {
   margin-left: auto !important;
@@ -1814,7 +1827,7 @@ a, button, .nav-link, .dropdown-item a {
   font-size: 1.1em;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  text-align: center !important;
+  
   padding-bottom: 1.0em;
 }
 #sassencontent td {
@@ -1901,7 +1914,7 @@ a, button, .nav-link, .dropdown-item a {
   max-width: 800px !important;
   margin-right: auto !important;
   margin-left: auto !important;
-  text-align: center !important;
+  
 }
 #himg2 {
   margin-top: 2em !important;
@@ -1910,7 +1923,7 @@ a, button, .nav-link, .dropdown-item a {
   vertical-align: middle;
   width: 100% !important;
   max-width: 100% !important;
-  text-align: center !important;
+  
   display: flex !important;
   justify-content: center !important;
 }
@@ -1935,7 +1948,7 @@ a, button, .nav-link, .dropdown-item a {
   max-width: 1200px !important;
   width: 100% !important;
   font-weight: bold;
-  text-align: center !important;
+  
 }
 .gp1 {
   margin-bottom: 1.0em;
@@ -2023,7 +2036,7 @@ a, button, .nav-link, .dropdown-item a {
   margin-left: auto !important;
   margin-right: auto !important;
   margin-bottom: 1em !important;
-  text-align: center !important;
+  
   width: 100% !important;
   max-width: 800px !important;
   float: none !important;
@@ -2033,7 +2046,7 @@ a, button, .nav-link, .dropdown-item a {
   margin-right: auto !important;
   max-width: 1200px !important;
   width: 100% !important;
-  text-align: center !important;
+  
 }
 #unterp1 {
   margin-top: 1.4em;

@@ -38,6 +38,19 @@ p {
   margin: 0.75em 0;
 }
 
+/* Override Tailwind preflight for images inside paragraphs to allow text-align centering */
+p img,
+p svg,
+p video,
+p canvas,
+p audio,
+p iframe,
+p embed,
+p object {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 /* Standardized Links */
 a:link {
   color: #000000;
@@ -1908,7 +1921,7 @@ a, button, .nav-link, .dropdown-item a {
   max-width: 1200px ;
   width: 100% ;
   font-weight: bold;
-  text-align: center ;
+
 }
 .gp1 {
   margin-bottom: 1.0em;
