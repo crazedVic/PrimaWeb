@@ -18,7 +18,7 @@ class MeetingResource extends Resource
     protected static ?string $model = Meeting::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-calendar';
-    protected static ?string $navigationLabel = 'Meetings';
+    protected static ?string $navigationLabel = 'Sippungen';
     protected static ?string $modelLabel = 'Meeting';
     protected static ?string $pluralModelLabel = 'Meetings';
 
