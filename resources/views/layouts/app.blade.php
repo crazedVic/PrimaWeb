@@ -36,6 +36,7 @@
         <hr />
         <a href="https://www.arrai.com" target="_blank">Website hosting donated by array innovations</a>
 		<p class="spf4">Schlaraffia&reg; und Allschlaraffia&reg; are Registred Trademarks of Verband Allschlaraffia&reg; in Bern (CH) </p>
+        <img id="ftowl" src="{{ asset('images/masthead_owl_left.png') }}" alt="Owl" />
       </div>
 
     </div>

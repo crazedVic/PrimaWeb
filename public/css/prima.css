@@ -271,6 +271,10 @@ td {
   border-radius: 2px;
 }
 
+#main-nav.mobile-open .mobile-menu-toggle {
+  background: #CC0000;
+}
+
 #main-nav.mobile-open .mobile-menu-toggle span {
   background-color: #ffffff ;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
@@ -348,48 +352,6 @@ a, button, .nav-link, .dropdown-item a {
     display: block;
   }
   
-  /* Header adjustments */
-  #hd {
-    height: auto;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-  }
-  
-  #owlleft, #owlright {
-    display: block;
-    width: 80px;
-    height: 60px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    flex-shrink: 0;
-    float: none;
-  }
-  
-  #owlleft {
-    order: 1;
-    background-position: left center;
-  }
-  
-  #owlright {
-    order: 3;
-    background-position: right center;
-  }
-  
-  #title {
-    order: 2;
-    width: auto;
-    flex: 1;
-    min-width: 0;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 60px;
-    margin: 0;
-  }
   
   /* Content area adjustments - override YUI grid */
   #doc3, #doc, #doc2, #doc4 {
@@ -688,20 +650,6 @@ a, button, .nav-link, .dropdown-item a {
     font-size: 1.3em ;
   }
   
-  /* Smaller eagle images on very small screens */
-  #hd {
-    min-height: 50px;
-  }
-  
-  #owlleft, #owlright {
-    width: 60px;
-    height: 50px;
-  }
-  
-  #title {
-    height: 50px;
-  }
-  
   [id$="content"] {
     margin-left: 0.5em ;
     margin-right: 0.5em ;
@@ -957,6 +905,126 @@ a, button, .nav-link, .dropdown-item a {
   width: 472px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Footer owl - hidden by default, shown in media query */
+#ftowl {
+  display: none;
+  width: 119px;
+  height: auto;
+  margin: 1em auto 0 auto;
+}
+
+/* Eagle image scaling at different breakpoints - header and title always 101px */
+@media (max-width: 1024px) {
+  /* Reduce eagles by 50% - maintain aspect ratio */
+  /* Original: 238px × 101px, 50% = 119px × 50px */
+  #hd {
+    height: 101px;
+  }
+  
+  #owlleft, #owlright {
+    width: 119px;
+    height: 101px;
+    background-size: 119px 50px;
+  }
+  
+  #title {
+    height: 101px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Reduce eagles by 75% (25% of original) - maintain aspect ratio */
+  /* Original: 238px × 101px, 25% = 60px × 25px */
+  #hd {
+    height: 101px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+  
+  #owlleft, #owlright {
+    display: block;
+    width: 60px;
+    max-width: 60px;
+    min-width: 60px;
+    height: 101px;
+    background-size: 60px 25px;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    float: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #owlleft {
+    order: 1;
+    background-position: left center;
+  }
+  
+  #owlright {
+    order: 3;
+    background-position: right center;
+  }
+  
+  #title {
+    order: 2;
+    width: 472px;
+    flex: 0 0 472px;
+    min-width: 472px;
+    background-size: 472px 101px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 101px;
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Hide eagle images on small screens */
+  #owlleft, #owlright {
+    display: none;
+  }
+  
+  #hd {
+    justify-content: center;
+  }
+  
+  #title {
+    margin: 0;
+  }
+  
+  /* Show single owl image in footer */
+  #ftowl {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce eagles for very small screens - maintain aspect ratio */
+  /* Using ~17% of original: 40px × 17px (maintains 2.356 aspect ratio) */
+  #hd {
+    height: 101px;
+    padding: 0 3px;
+  }
+  
+  #owlleft, #owlright {
+    display: none;
+  }
+  
+  #title {
+    height: 101px;
+    width: 472px;
+    flex: 0 0 472px;
+    min-width: 472px;
+    background-size: 472px 101px;
+    margin: 0 3px;
+  }
 }
 .ul1 {
   border: 5px outset lightgrey;
