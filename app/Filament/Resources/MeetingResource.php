@@ -20,7 +20,7 @@ class MeetingResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-calendar';
     protected static ?string $navigationLabel = 'Sippungen';
     protected static ?string $modelLabel = 'Meeting';
-    protected static ?string $pluralModelLabel = 'Meetings';
+    protected static ?string $pluralModelLabel = 'Sippungen';
 
     public static function form(Form $form): Form
     {

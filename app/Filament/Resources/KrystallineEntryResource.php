@@ -18,6 +18,9 @@ class KrystallineEntryResource extends Resource
     protected static ?string $model = KrystallineEntry::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Krystallinen';
+    protected static ?string $modelLabel = 'Krystallinen';
+    protected static ?string $pluralModelLabel = 'Krystallinen';
 
     public static function form(Form $form): Form
     {

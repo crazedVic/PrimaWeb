@@ -18,6 +18,9 @@ class KrystallinenResource extends Resource
     protected static ?string $model = Krystallinen::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Reiche';
+    protected static ?string $modelLabel = 'Reich';
+    protected static ?string $pluralModelLabel = 'Reiche';
 
     public static function form(Form $form): Form
     {

@@ -18,9 +18,9 @@ class MemberContactResource extends Resource
     protected static ?string $model = MemberContact::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-identification';
-    protected static ?string $navigationLabel = 'Member Contacts';
-    protected static ?string $modelLabel = 'Member Contact';
-    protected static ?string $pluralModelLabel = 'Member Contacts';
+    protected static ?string $navigationLabel = 'Sassen';
+    protected static ?string $modelLabel = 'Sass';
+    protected static ?string $pluralModelLabel = 'Sassen';
 
     public static function form(Form $form): Form
     {

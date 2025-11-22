@@ -1916,6 +1916,7 @@ a, button, .nav-link, .dropdown-item a {
 
 .krystallinen-lageplan a {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   gap: 0.5em;
   text-decoration: none;

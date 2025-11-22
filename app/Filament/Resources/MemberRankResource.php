@@ -18,9 +18,9 @@ class MemberRankResource extends Resource
     protected static ?string $model = MemberRank::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
-    protected static ?string $navigationLabel = 'Member Ranks';
-    protected static ?string $modelLabel = 'Member Rank';
-    protected static ?string $pluralModelLabel = 'Member Ranks';
+    protected static ?string $navigationLabel = 'Sassen Kategorien';
+    protected static ?string $modelLabel = 'Sassen Kategorie';
+    protected static ?string $pluralModelLabel = 'Sassen Kategorien';
 
     public static function form(Form $form): Form
     {
